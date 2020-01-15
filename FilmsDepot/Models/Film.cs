@@ -35,8 +35,8 @@ namespace FilmsDepot.Models
                 if (_img != value)
                 {
                     _img = value;
-                    sWidth = (int)_img.Width;
-                    sHeight = (int)_img.Height;
+                    ImgWidth = (int)_img.Width;
+                    ImgHeight = (int)_img.Height;
                     OnPropertyChanged(new PropertyChangedEventArgs("Img"));
                 }
             }
