@@ -5,13 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Windows.Media;
 
-namespace FilmsDepot.Models
+namespace FilmsCo.Models
 {
     public class Film
     {
         #region Properties
         //Идентификатор
-        public Guid Id { get; set; }
+        public Guid guid { get; set; }
         //Название фильма
         public string Name { get; set; }
         //Описание фильма
@@ -48,7 +48,14 @@ namespace FilmsDepot.Models
 
         #endregion Properties
 
+        #region Constructor
 
+        public Film()
+        {
+            guid = Guid.NewGuid();
+        }
+
+        #endregion Constructor
 
         #region Events
 
