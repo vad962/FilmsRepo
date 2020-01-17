@@ -1,0 +1,87 @@
+﻿
+@model FilmsCo.Models.Film
+
+@{
+    ViewBag.Title = "Добавить фильм";
+}
+
+<h2>Добавить фильм</h2>
+
+<div class="form">
+
+    @using (Html.BeginForm("SaveFilm", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        
+            <h3>Кинофильм</h3>
+            <div class="data">
+                <div>
+                    <label>Название</label>
+                    @Html.TextBoxFor(x => x.Name)
+                </div>
+                <div>
+                    <label>Описание</label>
+                    @Html.TextBoxFor(x => x.Description)
+                </div>
+                <div>
+                    <label>Режиссер</label>
+                    @Html.TextBoxFor(x => x.Producer)
+                </div>
+                <div>
+                    <label>Год выпуска</label>
+                    @Html.TextBoxFor(x => x.Year)
+                </div>
+                <div>
+                    <label>Добавил</label>
+                    @Html.TextBoxFor(x => x.Owner)
+                </div>
+                <div>
+                    <label>Постер</label>
+                    @*<input type="file" name="Poster" />*@
+                    @Html.TextBoxFor(x => x.File, new { type = "file" })
+                </div>
+
+                <input type="submit" value="Добавить" />
+            </div>
+    }
+    </div>
+<style>
+    .form {
+        position: absolute;
+        left: 50%;
+        width: 470px;
+        margin-left: -235px;
+        background: #888;
+        border-radius: 5px;
+        top: 20px;
+    }
+
+    form {
+        background: #fff;
+        border-radius: 2px;
+        margin: 5px;
+    }
+
+    .data {
+        border-top: 1px solid #d5d5d5;
+        padding: 10px 15px;
+    }
+
+        .data div {
+            margin: 8px 0;
+        }
+
+    h3 {
+        padding: 10px 15px;
+        margin: 0;
+    }
+
+    label {
+        min-width: 100px;
+        display: block;
+        float: left;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+    }
+</style>

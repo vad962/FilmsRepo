@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.jumb {
+    background-color: lightblue;
+}
+
+.nbbg {
+    background-color: #346CB0;
+}

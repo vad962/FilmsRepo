@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Windows.Media;
+using System.Data.Entity;
 
 namespace FilmsCo.Models
 {
@@ -23,28 +24,9 @@ namespace FilmsCo.Models
         //Владелец записи
         public string Owner { get; set; }
         //Изображение - постер
-        private ImageSource _img;          
-        public ImageSource Img
-        {
-            get
-            {
-                return _img;
-            }
-            set
-            {
-                if (_img != value)
-                {
-                    _img = value;
-                    ImgWidth = (int)_img.Width;
-                    ImgHeight = (int)_img.Height;
-                    OnPropertyChanged(new PropertyChangedEventArgs("Img"));
-                }
-            }
-        }
-        //Ширина картинки
-        public int ImgWidth { get; set; }
-        //Высота картинки
-        public int ImgHeight { get; set; }
+        public byte[] Poster { get; set; }
+        //Картинка
+        public HttpPostedFileBase File { get; set; }
 
         #endregion Properties
 
