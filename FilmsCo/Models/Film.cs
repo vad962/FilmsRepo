@@ -11,8 +11,9 @@ namespace FilmsCo.Models
     public class Film
     {
         #region Properties
-        //Идентификатор
-        public Guid guid { get; set; }
+
+        //Первичный ключ
+        public int Id { get; set; }
         //Название фильма
         public string Name { get; set; }
         //Описание фильма
@@ -34,7 +35,7 @@ namespace FilmsCo.Models
 
         public Film()
         {
-            guid = Guid.NewGuid();
+            //guid = Guid.NewGuid();
         }
 
         #endregion Constructor

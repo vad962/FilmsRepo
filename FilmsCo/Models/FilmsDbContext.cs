@@ -10,7 +10,7 @@ namespace FilmsCo.Models
     {
         // Имя будущей базы данных можно указать через
         // вызов конструктора базового класса
-        public FilmsDbContext() : base("DefaultConnection")
+        public FilmsDbContext() : base("FilmsDbContext")
         { }
 
         // Отражение таблиц базы данных на свойства с типом DbSet

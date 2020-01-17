@@ -11,6 +11,7 @@ namespace FilmsCo.Controllers
 {
     public class HomeController : Controller
     {
+        private FilmsDbContext db;
         private Film mModel;
         List<Film> Films;
 
@@ -116,6 +117,14 @@ namespace FilmsCo.Controllers
 
             // Сохранить изменения в БД
             context.SaveChanges();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if(db != null)
+            //Закрыть БД
+            db.Dispose();
+            base.Dispose(disposing);
         }
 
     }
