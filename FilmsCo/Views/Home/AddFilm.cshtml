@@ -5,54 +5,70 @@
     ViewBag.Title = "Добавить фильм";
 }
 
-<h2>Добавить фильм</h2>
-
 <div class="form">
 
     @using (Html.BeginForm("SaveFilm", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         
-            <h3>Кинофильм</h3>
+            <h3>Добавить кинофильм</h3>
             <div class="data">
-                <div>
-                    <label>Название</label>
-                    @Html.TextBoxFor(x => x.Name)
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Название</label>
+                    </div>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "col-md-9 finp" })
                 </div>
-                <div>
-                    <label>Описание</label>
-                    @Html.TextBoxFor(x => x.Description)
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Описание</label>
+                    </div>
+                    @Html.TextBoxFor(x => x.Description, new { @class = "col-md-9 finp" })
                 </div>
-                <div>
-                    <label>Режиссер</label>
-                    @Html.TextBoxFor(x => x.Producer)
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Жанр</label>
+                    </div>
+                    @Html.TextBoxFor(x => x.Genre, new { @class = "col-md-9 finp" })
                 </div>
-                <div>
-                    <label>Год выпуска</label>
-                    @Html.TextBoxFor(x => x.Year)
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Режиссер</label>
+                    </div>
+                    @Html.TextBoxFor(x => x.Producer, new { @class = "col-md-9 finp" })
                 </div>
-                <div>
-                    <label>Добавил</label>
-                    @Html.TextBoxFor(x => x.Owner)
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Год выпуска</label>
+                    </div>
+                        @Html.TextBoxFor(x => x.Year, new { @class = "col-md-9 mt" })
                 </div>
-                <div>
-                    <label>Постер</label>
-                    @*<input type="file" name="Poster" />*@
-                    @Html.TextBoxFor(x => x.File, new { type = "file" })
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Добавил</label>
+                    </div>
+                        @Html.TextBoxFor(x => x.Owner, new { @class = "col-md-9 finp" })
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Постер</label>
+                    </div>
+                        @Html.TextBoxFor(x => x.File, new { type = "file" })
                 </div>
 
                 <input type="submit" value="Добавить" />
             </div>
     }
-    </div>
+</div>
 <style>
     .form {
         position: absolute;
         left: 50%;
-        width: 470px;
-        margin-left: -235px;
+        width: 800px;
+        margin-left: -400px;
         background: #888;
         border-radius: 5px;
-        top: 20px;
+        top: 100px;
     }
 
     form {

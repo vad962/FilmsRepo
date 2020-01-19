@@ -18,14 +18,14 @@ namespace FilmsCo.Controllers
         public HomeController()
         {
             Films = new List<Film>();
-            Films.Add(new Film { Name = "Samsung Galaxi" });
-            Films.Add(new Film { Name = "Samsung Galaxi II" });
-            Films.Add(new Film { Name = "Samsung Galaxi II" });
-            Films.Add(new Film { Name = "Samsung ACE" });
-            Films.Add(new Film { Name = "Samsung ACE II" });
-            Films.Add(new Film { Name = "HTC One S" });
-            Films.Add(new Film { Name = "HTC One X" });
-            Films.Add(new Film { Name = "Nokia N9" });
+            Films.Add(new Film { Name = "Samsung Galaxi", Description = "Фильм 1 Описание" });
+            Films.Add(new Film { Name = "Samsung Galaxi II", Description = "Фильм 2 Описание" });
+            Films.Add(new Film { Name = "Samsung Galaxi II", Description = "Фильм 3 Описание" });
+            Films.Add(new Film { Name = "Samsung ACE", Description = "Фильм 4 Описание" });
+            Films.Add(new Film { Name = "Samsung ACE II", Description = "Фильм 5 Описание" });
+            Films.Add(new Film { Name = "HTC One S", Description = "Фильм 6 Описание" });
+            Films.Add(new Film { Name = "HTC One X", Description = "Фильм 7 Описание" });
+            Films.Add(new Film { Name = "Nokia N9", Description = "Фильм 8 Описание" });
         }
 
         public ActionResult Index(int? page)
@@ -76,6 +76,8 @@ namespace FilmsCo.Controllers
                 mModel.Year = coll["Year"];
                 //Producer
                 mModel.Producer = coll["Producer"];
+                //Genre
+                mModel.Genre = coll["Genre"];
                 //Owner
                 mModel.Owner = coll["Owner"];
                 // Загрузить Poster с помощью средств .NET
@@ -85,6 +87,9 @@ namespace FilmsCo.Controllers
                 //var poster = Request.Files["Poster"];
                 if (poster != null)
                 {
+                    //Заполним информацию о картинке
+                    mModel.PosterName = poster.FileName;
+                    mModel.ContentType = poster.ContentType;
                     BinaryReader b = new BinaryReader(poster.InputStream);
                     mModel.Poster = b.ReadBytes((int)poster.InputStream.Length);
                 }
