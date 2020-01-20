@@ -9,6 +9,12 @@ namespace FilmsCo.Models
 {
     public class FilmsDbContext : ApplicationDbContext
     {
+<<<<<<< HEAD
+        // Имя будущей базы данных можно указать через
+        // вызов конструктора базового класса
+        public FilmsDbContext() : base("DefaultConnection")                                                                                                               
+        { }
+=======
         static FilmsDbContext() //: base("FilmsDbContext")
         {
             Database.SetInitializer<FilmsDbContext>(new FilmsDbContextInitializer());  //CreateDatabaseIfNotExists<FilmsDbContext>());
@@ -18,6 +24,7 @@ namespace FilmsCo.Models
         //// вызов конструктора базового класса
         //public FilmsDbContext() : base("FilmsDbContext")
         //{ }
+>>>>>>> 7a95536bcab2677fa6d32ba13523ffe1c0c720e7
 
         // Отражение таблиц базы данных на свойства с типом DbSet
         public DbSet<Film> Films { get; set; }
